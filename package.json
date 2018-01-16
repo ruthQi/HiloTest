@@ -1,0 +1,17 @@
+{
+  "name": "HiloTest",
+  "version": "0.0.0",
+  "description": "",
+  "author": {
+    "name": "qiru",
+    "email": "qi0428ru@163.com"
+  },
+  "main": "",
+  "keywords": [
+    "gene"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": "",
+  "license": "Apache-2.0"
+}
