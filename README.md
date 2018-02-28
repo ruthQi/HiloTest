@@ -1,3 +1,4 @@
+命令行创建工程测试
 # HiloTest
 > hilo test
 #创建新工程：
