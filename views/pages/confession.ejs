@@ -1,0 +1,18 @@
+<% layout('/partials/layout.ejs') -%>
+<% block('page_title', 'confession') -%>
+<% block('page_css', '/styles/pages/confession.css') -%>
+<% block('page_js', '/scripts/pages/confession.js') -%>
+<div id="common-loading">
+   <div id="common-loading-center"></div>
+</div>
+<div class="common-container">
+   <canvas id="app"></canvas>
+   <div class="cover active none">
+      <div class="rain"></div>
+      <div class="wave wave4"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave1"></div>
+      <div class="progress"></div>
+   </div>
+</div>

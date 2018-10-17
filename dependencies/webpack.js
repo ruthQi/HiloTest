@@ -34,9 +34,7 @@ var getConfig = function(env) {
     return {
         cache: true,
         context: path.join(process.cwd(), ''),
-        entry: {
-            'index': ['./public/scripts/pages/index.js']
-        },
+        entry: {},
         output: {
             path: path.join(process.cwd(), './public/dist/scripts/pages'),
             filename: '[name].js',
