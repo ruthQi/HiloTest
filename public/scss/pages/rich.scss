@@ -1,0 +1,150 @@
+*,body,ul{margin:0}
+*,legend,td,th,ul{padding:0}
+html, body{
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+body{
+   background-color: #fafafc;
+   padding: 0px;
+   margin: 0px;
+   position: relative;
+   font: 28px/1.2 Heiti SC,Helvetica Neue,Helvetica,sans-serif;
+}
+p{
+   margin: 0px;
+   padding: 0px;
+}
+.common-container{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 750px;
+   height: 100vh;
+}
+.dialog_wrap {
+   width: 100vw;
+   height: 100vh;
+   position: absolute;
+   left: 0;
+   top: 0;
+   overflow: scroll;
+   background-color: #fafafc;
+}
+#dialog_cont{
+   padding-bottom: 170px;
+   width: 750px;
+   overflow-x: hidden;
+}
+.tip{
+   width: 580px;
+   padding: 18px 35px;
+   font: 24px/40px "Microsoft Yahei",PingFangSC-Regular,sans-serif;
+   color: #b9b9b9;
+   text-align: justify;
+   background: #f2f2f4;
+   border-radius: 20px;
+   margin: 70px auto;
+   opacity: 0;
+   animation: opacity .5s forwards;
+   em{
+      font-style: normal;
+      color: #bfa77b;
+   }
+}
+.chatQ {
+    padding-bottom: 35px;
+    padding-left: 130px;
+    position: relative;
+    z-index: 20;
+    transform: translate(0,0);
+    .clearfix{
+      zoom: 1;
+      &:after {
+         display: block;
+         clear: both;
+         content: "";
+         visibility: hidden;
+         height: 0;
+      }
+   }
+    .head_img {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 30px;
+      top: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      opacity: 0;
+      animation: opacity .3s linear forwards;
+   }
+   .name {
+      font: 24px/30px "Microsoft Yahei",PingFangSC-Regular,sans-serif;
+      color: #888;
+      margin-bottom: 14px;
+      animation: opacity .3s linear forwards;
+      em{
+         color: #bbb;
+         font-style: normal;
+      }
+   }
+   .dialogue {
+      font: 28px/40px "Microsoft Yahei",PingFangSC-Regular,sans-serif;
+      color: #252525;
+      background: #fff;
+      box-shadow: 0 0 13px 0 rgba(191,167,123,.3);
+      border-bottom-right-radius: 40px;
+      position: relative;
+      transform: scale(0) translate3d(0,0,0);
+      transform-origin: 0 0;
+      padding: 20px 28px;
+      border-top-right-radius: 40px;
+      border-bottom-left-radius: 40px;
+      display: inline-block;
+      animation: chatQ .3s forwards;
+      p{
+         max-width: 476px;
+         display: inline-block;
+         text-align: justify;
+      }
+   }
+}
+.start_btn {
+    padding: 20px 28px;
+    box-shadow: 0 10px 13px 0 rgba(191,167,123,.7);
+    width: 174px;
+    margin: 100px auto;
+    display: block;
+    text-align: center;
+    background: #1e1e1e;
+    color: #fff;
+    font: 28px/40px "Microsoft Yahei",PingFangSC-Regular,sans-serif;
+    border-radius: 40px;
+    animation: start_btn 1s infinite;
+}
+@keyframes opacity{
+   0%{
+      opacity: 0;
+   }
+   100%{
+      opacity: 1;
+   }
+}
+@keyframes chatQ{
+   0%{
+      transform: scale(0)
+   }
+   100%{
+      transform: scale(1)
+   }
+}
+@keyframes start_btn{
+   0%, 100%{
+      transform: scale(1);
+   }
+   50%{
+      transform: scale(1.1);
+   }
+}
