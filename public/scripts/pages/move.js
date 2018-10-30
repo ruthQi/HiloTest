@@ -41,7 +41,8 @@ class Move{
    }
 
    _onTouchStart(e) {
-      if ($(".makesure").addClass("cur"), window.stage) {
+      $(".makesure").addClass("cur")
+      if (window.stage) {
          let point = e.touches ? e.touches[0] : e;
          let redsun = window.stage.getChildById("redsun");
          this.x = redsun.x;
@@ -82,18 +83,21 @@ class Move{
       
    }
    _onTouchMove(e) {
+      console.log(e)
       if(window.stage){
          let timestamp = this._getTime();
          if (e.touches.length > 1) {
             let xLen = Math.abs(e.touches[0].pageX - e.touches[1].pageX);
             let yLen = Math.abs(e.touches[1].pageY - e.touches[1].pageY);
             let touchDistance = this._getDistance(xLen, yLen);
+            console.log(this.touchDistance)
             if (this.touchDistance) {
                let pinchScale = touchDistance / this.touchDistance;
                //this._emitEvent('onPinch', { scale: pinchScale - this.previousPinchScale });
                this.onPinch({
                   pinch: pinchScale - this.previousPinchScale
                })
+               console.log(pinchScale, (pinchScale - this.previousPinchScale))
                this.previousPinchScale = pinchScale;
             }
             if (this.touchVector) {
@@ -209,6 +213,7 @@ class Move{
 
    }
    getRelationship = function (t) {
+      console.log(t)
       let halfX = Math.round(this.x + t / 2),//e
          halfY = Math.round(this.y + t / 2),//n
          half = Math.round(t / 2),//i

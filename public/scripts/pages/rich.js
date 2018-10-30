@@ -16,6 +16,8 @@ class Rich{
       this.richPercent = 0;//y
       this.realPoorPercent = 0;//x
       this.realRichPercent = 0;//T
+      this.poorScore = 0;//w
+      this.richScore = 0;//v
       this.resultImg;
       this.scrollTo();
       this.loadScene();
@@ -107,21 +109,27 @@ class Rich{
          setTimeout( () => {
             this.addScene(data[3][4])
          }, 2e3)
-      })
+      });
+      $("#dialog_cont").on("click", ".bigImgopen",  (t) => {
+         $(".bigImgBox").addClass("cur")
+      }); 
+      $(".closeBigImg").on("click",  (t) => {
+         $(".bigImgBox").removeClass("cur");
+      });
    }
    computedNum(manType){
       switch (manType) {
          case 'rich':
-            this.richPercent += 1;
+            this.richScore += 1;
             break;
          case 'normal':
-           this.richPercent += .5;
-           this.poorPercent += .5;
+           this.richScore += .5;
+           this.poorScore += .5;
            break;
          case 'poor':
-            this.poorPercent += 1;
+            this.poorScore += 1;
       }
-      console.log(this.poorPercent + ';' + this.richPercent)
+      console.log(this.poorScore + ';' + this.richScore)
    }
    addScene(obj){
       switch (obj.type) {
@@ -270,7 +278,8 @@ class Rich{
       });
    }
    loadEnd(){//o()
-      this.realPoorPercent = parseFloat((this.poorPercent / 6 * 100).toFixed(2));
+      console.log(this.poorScore)
+      this.realPoorPercent = parseFloat((this.poorScore / 6 * 100).toFixed(2));
       this.realRichPercent = parseFloat(100 - this.realPoorPercent);
       let arr = [-2, -1, 0, 1, 2];
       if (this.realPoorPercent == 0 || this.realPoorPercent == 50 || this.realPoorPercent == 100){
@@ -283,7 +292,7 @@ class Rich{
       }
       console.log("poorPercent:" + this.poorPercent + ",realPoorPercent:" + this.realPoorPercent);
       let num;
-      if (this.realPoorPercent){
+      if (this.realPoorPercent == 100){
          num = 11;
       } else if (this.realPoorPercent > 83 && this.realPoorPercent < 92){
          num = 10;
