@@ -603,7 +603,7 @@ export const data = [
       quesBlock: 6,
       quesNum: 8,
       timer: timer,
-      result: "true"
+      result: ""
    }],
    [{
       type: "tip",
